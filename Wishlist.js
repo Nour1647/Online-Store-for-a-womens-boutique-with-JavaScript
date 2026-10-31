@@ -6,7 +6,7 @@ var container = document.getElementById('container');
 
 if (localStorage.getItem('FirstName')) {
     links1.style.display = 'none';
-    links2.style.display = 'block';
+    links2.style.display = 'flex';
     userName.innerHTML = localStorage.getItem('FirstName');
 }
 
