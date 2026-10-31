@@ -325,3 +325,47 @@ form .links a:hover {
   border-color: #be185d;
   box-shadow: 0 0 0 3px rgba(190, 24, 93, 0.12);
 }
+
+.links-1 a,
+.links-2 a {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 12px 20px;
+  }
+
+  .nav h2.brand-logo {
+    line-height: 1.35;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .links-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 95px;
+  }
+
+  .links-1 a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 6px 14px;
+    margin: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    font-size: 16px;
+  }
+
+  .links-1 a:first-child {
+    border-bottom: 1px solid rgba(157, 23, 77, 0.18);
+    padding-bottom: 7px;
+    margin-bottom: 5px !important;
+  }
+}
