@@ -323,7 +323,6 @@ form .links a:hover {
   white-space: nowrap;
 }
 
-/* التنسيق المتجاوب لشاشات الموبايل والتابلت */
 @media (max-width: 1024px) {
   .store-layout {
     flex-direction: column;
@@ -348,7 +347,6 @@ form .links a:hover {
     margin: 0;
   }
 
-  /* links-1 فوق بعضها بمحاذاة اسم المتجر */
   .links-1 {
     display: flex;
     flex-direction: column;
