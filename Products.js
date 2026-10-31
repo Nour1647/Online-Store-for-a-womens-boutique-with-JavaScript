@@ -8,7 +8,7 @@ var data = JSON.parse(localStorage.getItem('Products')) || [];
 
 if (localStorage.getItem('FirstName')) {
     links1.style.display = 'none';
-    links2.style.display = 'block';
+    links2.style.display = 'flex';
     userName.innerHTML = localStorage.getItem('FirstName');
 }
 
@@ -23,12 +23,17 @@ function Out(e) {
 
 function Draw() {
     if (data.length === 0) {
-        container.innerHTML = "<p style='text-align:center; padding:40px; color:#9d174d; font-size:18px; grid-column: 1 / -1;'>Your shopping bag is empty 🌸</p>";
-        if (totalPriceContainer) totalPriceContainer.style.display = "none";
+        container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px;">
+                <p style="color:#9d174d; font-size:20px; font-weight:600; margin-bottom:18px;">Your shopping bag is empty 🌸</p>
+                <a href="index.html" style="display:inline-block; background:linear-gradient(135deg, #be185d, #e11d48); color:#fff; text-decoration:none; padding:10px 26px; border-radius:999px; font-weight:600; font-size:14px;">Back to Shop ✨</a>
+            </div>
+        `;
+        if (totalPriceContainer) totalPriceContainer.style.display = 'none';
         return;
     }
 
-    if (totalPriceContainer) totalPriceContainer.style.display = "block";
+    if (totalPriceContainer) totalPriceContainer.style.display = 'block';
 
     var x = data.map((item) => {
         var qty = Number(item.qty) || 1;
@@ -42,7 +47,6 @@ function Draw() {
                 <h2>${item.title}</h2>
                 <p>${item.text}</p>
                 <p>Unit Price: $${unitPrice}</p>
-
 
                 <div style="margin: 12px 0; display: flex; align-items: center;">
                     <button type="button" onClick="ChangeQty(${item.id}, -1)" style="padding: 4px 14px; margin: 0;">-</button>
@@ -104,7 +108,6 @@ function DeleteFromCart(id) {
         Draw();
     }
 }
-
 
 function OpenCheckoutModal(totalPrice) {
     var oldModal = document.getElementById('checkout-modal');
